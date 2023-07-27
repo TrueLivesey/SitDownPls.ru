@@ -1,8 +1,48 @@
 <section class="rating">
-  <h2 class="title-h2 rating__title">Высокий рейтинг</h2>
-  <ul class="products">
-    <li class="products-card">
-      <div class="products-card__rating"></div>
-    </li>
-  </ul>
+  <div class="container">
+    <h2 class="title-h2 rating__title">Высокий рейтинг</h2>
+    <ul class="products">
+      <li class="product-card">
+        <div class="product-card__rating">
+          <svg width="70" height="70" class="services__icon">
+            <use xlink:href="images/sprite.svg#star"></use>
+          </svg>
+          <p class="product-card__point">5,0</p>
+        </div>
+        <picture>
+          <source srcset="images/product_1.webp" type="image/webp" />
+          <img
+            loading="lazy"
+            src="images/product_1.png"
+            class="image"
+            alt="Диван кожаный &laquo;R-94&raquo;"
+          />
+        </picture>
+        <span class="product-card__title">Диван кожаный &laquo;R-94&raquo;</span>
+        <span class="product-card__price">94&nbsp;990 руб</span>
+        <button class="btn-reset btn product-card__btn">Купить</button>
+      </li>
+      <li class="product-card">
+        <div class="product-card__rating">
+          <svg width="70" height="70" class="services__icon">
+            <use xlink:href="images/sprite.svg#star"></use>
+          </svg>
+          <p class="product-card__point">4,9</p>
+        </div>
+        <picture>
+          <source srcset="images/product_2.webp" type="image/webp" />
+          <img
+            loading="lazy"
+            src="images/product_2.png"
+            class="image"
+            alt="Диван апартековый &laquo;T-75&raquo;"
+          />
+        </picture>
+        <span class="product-card__title">Диван апартековый &laquo;T-75&raquo;</span>
+        <span class="product-card__price">69&nbsp;990 руб</span>
+        <button class="btn-reset btn product-card__btn">Купить</button>
+      </li>
+    </ul>
+    <button class="btn-reset btn-more">Смотреть больше товаров</button>
+  </div>
 </section>

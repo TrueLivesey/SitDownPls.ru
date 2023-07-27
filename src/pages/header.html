@@ -1,1 +1,111 @@
-<header>header</header>
+<header class="header section-offset">
+  <div class="header__top">
+    <div class="container grid">
+      <div class="header__top-left">
+        <div class="select-city">
+          <span class="select-city__region">Ваш регион:</span>
+          <select name="город" id="select-city" class="select select-city__select">
+            <option value="1">Москва</option>
+            <option value="2">Казань</option>
+            <option value="3">Уфа</option>
+            <option value="4">Пермь</option>
+          </select>
+        </div>
+        <div class="header__phone">
+          <svg width="22px" height="22px" class="header__phone-icon">
+            <use xlink:href="images/sprite.svg#phone"></use>
+          </svg>
+          <a href="tel:+79958854547" class="header__phone-link">+7 (495) 885-45-47</a>
+        </div>
+      </div>
+      <ul class="info header__info">
+        <li class="info__item">
+          <a href="" class="info__link">О&nbsp;компании</a>
+        </li>
+        <li class="info__item">
+          <a href="" class="info__link">Гарантия и&nbsp;возврат</a>
+        </li>
+        <li class="info__item">
+          <a href="" class="info__link">Корпоративным клиентам</a>
+        </li>
+        <li class="info__item">
+          <a href="" class="info__link">Дизайн-решение</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="header__middle">
+      <svg class="header__logo">
+        <use xlink:href="images/sprite.svg#logo"></use>
+      </svg>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="" class="nav__link">Каталог</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Магазины</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Шоу-рум</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Доставка и&nbsp;оплата</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Дисконт</a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__bottom">
+      <form action="" class="form-header header__form">
+        <label for="header-search">
+          <input
+            id="header-search"
+            type="text"
+            placeholder="Я хочу купить..."
+            class="form-header__input"
+          />
+        </label>
+        <button class="btn-reset form-header__btn">
+          <svg class="form-header__arrow">
+            <use xlink:href="images/sprite.svg#search-arrow"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="select-category">
+        <span class="select-category__region">Ваш регион:</span>
+        <select name="город" id="select-category" class="select select-category__select">
+          <option value="1">Диваны</option>
+          <option value="2">Кресла</option>
+          <option value="3">Пуфы</option>
+          <option value="5">Кровати</option>
+          <option value="6">Тумбы</option>
+          <option value="7">Комоды</option>
+          <option value="8">Стулья</option>
+          <option value="9">Столы</option>
+          <option value="9">Аксессуары</option>
+        </select>
+      </div>
+      <div class="header__btns">
+        <button class="btn-reset header__user">
+          <svg class="header__user">
+            <use xlink:href="images/sprite.svg#user"></use>
+          </svg>
+        </button>
+        <button class="header__basket">
+          <span class="header__basket-counter">0</span>
+          <svg class="header__user">
+            <use xlink:href="images/sprite.svg#basket"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

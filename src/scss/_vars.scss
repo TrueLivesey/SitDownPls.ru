@@ -1,0 +1,51 @@
+// COLORS
+$colorPrimary: #A65CF0;
+$colorPrimaryLight: #C998FB;
+$colorPrimaryShade: #7033AC;
+$colorPinkLight: #F8EFFF;
+$colorPinkViolet: #EBD1FF;
+$colorSecondary: #FF862F;
+$colorSecondaryLight: #FFBD59;
+$colorSecondaryShade: #BB370E;
+$colorRedInput: #FF6972;
+$colorGreenInput: #B8EC64;
+$colorGold: #D5B986;
+$colorWhite: #FFFFFF;
+$colorGreyLight: #F6F6F6;
+$colorGreyMd: #EAEAEA;
+$colorGrey: #999999;
+$colorGreyShade: #666666;
+$colorBlack: #333333;
+$colorBlack20: rgba(0, 0, 0, 0.2);
+$colorLime: #DAFFD1;
+$colorBone: #FFF5D1;
+
+// GAP
+$section-gap: 4.38rem;
+$grid-gap: 2rem;
+
+// FONT-FAMILY
+$sectionTitleFamily: 'Open-Sans', sans-serif;
+$subtitleFamily: 'Open-Sans', sans-serif;
+$descrFamily: 'Open-Sans', sans-serif;
+
+// FONT-SIZE
+$sectionTitleSize: 2rem;
+$subtitleSize: 0.875rem;
+$descrSize: 1.5rem;
+
+// FONT-WEIGHT
+$sectionTitleWeight: 400;
+$subtitleWeight: 400;
+$descrWeight: 400;
+
+// LINE-HEIGHT
+$sectionTitleLineHeight: 100%;
+
+// TRANSITION
+$transitionHoverColor: color .2s ease-in-out;
+$transitionHoverBackgroundColor: background-color .2s ease-in-out;
+$transitionHoverFill: fill .2s ease-in-out;
+
+// MEDIA SIZES
+$sizes: ("xs":320px, "sm":480px, "md":576px, "lg":768px, "xl":1024px);

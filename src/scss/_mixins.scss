@@ -1,32 +1,35 @@
-@import '';
+// FONTS
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: '#{$font-family}';
+    src: url('../fonts/#{$url}.woff2') format('woff2');
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
 
 // TITLES
-@mixin title-h2 {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1rem;
+@mixin title-product {
+  color: $colorBlack;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 
-@mixin title-h2-576 {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
+@mixin price {
+  font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
-  line-height: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
 }
 
-@mixin title-h3 {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1rem;
-}
+// BUTTONS
+@mixin btn {
 
-@mixin title-h3-576 {
-  font-family: 'Arial', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1rem
 }
 
 // MEDIA

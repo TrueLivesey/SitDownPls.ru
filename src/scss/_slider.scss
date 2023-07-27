@@ -1,0 +1,42 @@
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto;
+  padding: 1.87rem;
+  background-color: $colorGreyLight;
+
+  &--small {
+    width: 14.76rem;
+  }
+
+  &:nth-child(3n-1) {
+    width: 35.32rem;
+  }
+
+  & .btn {
+    // align-self: flex-start;
+  }
+}
+
+.button-next {
+  position: absolute;
+  top: 0;
+  right: 0.9375rem;
+  z-index: 10;
+
+  &:after {
+    content: url(../images/slider-button-next.svg);
+  }
+}
+
+.button-prev {
+  position: absolute;
+  top: 0;
+  right: 3.7475rem;
+  z-index: 10;
+
+  &:after {
+    content: url(../images/slider-button-prev.svg);
+  }
+}

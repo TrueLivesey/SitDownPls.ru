@@ -1,4 +1,8 @@
-@import './vars';
+@import './_vars', './_mixins', './_libs', './fonts/fonts';
+@import './_slider';
+@import './select';
+@import './_header';
+@import './_special';
 
 html {
   box-sizing: border-box;
@@ -8,10 +12,10 @@ html {
 
 body {
   height: auto;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: normal;
-  // color: $colorBlack;
+  color: $colorBlack;
 }
 
 a {
@@ -29,4 +33,49 @@ h1, h2, h3, h4, h5 {
 
 p {
   margin: 0;
+}
+
+.container {
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $grid-gap;
+}
+
+.title-h2 {
+  margin-bottom: 1.62rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  font-style: normal;
+  line-height: 100%;
+}
+
+.title-h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1rem;
+}
+
+.product-title {
+  @include title-product;
+}
+
+.btn {
+  padding: 1.19rem 2.19rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  color: $colorPrimary;
+  border: 2px solid $colorPrimary;
+  border-radius: 0.625rem;
 }

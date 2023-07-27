@@ -1,0 +1,59 @@
+.header {
+  margin-bottom: 2rem;
+
+  &__top {
+    background-color: $colorGreyLight;
+
+    .container {
+      padding-top: 0.25rem;
+      padding-bottom: 0.125rem;
+    }
+
+    &-left {
+      display: flex;
+      grid-column: 4 span;
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      width: 1.05rem;
+      fill: $colorSecondary;
+    }
+
+    &-link {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      color: $colorSecondary;
+    }
+  }
+}
+
+// INFO (header-top list)
+.info {
+  display: flex;
+  grid-column: 8 span;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__link {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: $colorGrey;
+  }
+}
+
