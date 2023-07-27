@@ -35,11 +35,16 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="header__middle">
-      <svg class="header__logo">
-        <use xlink:href="images/sprite.svg#logo"></use>
-      </svg>
+  <div class="header__bottom">
+    <div class="container grid">
+      <div class="header__logo">
+        <svg width="37px" height="27px" class="header__logo-elephant">
+          <use xlink:href="images/sprite.svg#logo-elephant"></use>
+        </svg>
+        <svg width="140px" height="27px" class="header__logo-text">
+          <use xlink:href="images/sprite.svg#logo-text"></use>
+        </svg>
+      </div>
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -62,46 +67,49 @@
           </li>
         </ul>
       </nav>
-    </div>
-    <div class="header__bottom">
-      <form action="" class="form-header header__form">
-        <label for="header-search">
-          <input
-            id="header-search"
-            type="text"
-            placeholder="Я хочу купить..."
-            class="form-header__input"
-          />
-        </label>
-        <button class="btn-reset form-header__btn">
-          <svg class="form-header__arrow">
-            <use xlink:href="images/sprite.svg#search-arrow"></use>
-          </svg>
-        </button>
-      </form>
-      <div class="select-category">
-        <span class="select-category__region">Ваш регион:</span>
-        <select name="город" id="select-category" class="select select-category__select">
-          <option value="1">Диваны</option>
-          <option value="2">Кресла</option>
-          <option value="3">Пуфы</option>
-          <option value="5">Кровати</option>
-          <option value="6">Тумбы</option>
-          <option value="7">Комоды</option>
-          <option value="8">Стулья</option>
-          <option value="9">Столы</option>
-          <option value="9">Аксессуары</option>
-        </select>
+      <div class="header__search-and-select">
+        <form action="" class="form-header header__form">
+          <label for="header-search" class="form-header__label">
+            <svg width="20px" height="20px" class="form-header__search-icon">
+              <use xlink:href="images/sprite.svg#search"></use>
+            </svg>
+            <input
+              id="header-search"
+              type="text"
+              placeholder="Я хочу купить..."
+              class="form-header__input"
+            />
+          </label>
+          <button class="btn-reset form-header__btn">
+            <svg width="32px" height="32px" class="form-header__arrow">
+              <use xlink:href="images/sprite.svg#search-arrow"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="select-category">
+          <select name="город" id="select-category" class="select select-category__select">
+            <option value="1">Категория</option>
+            <option value="2">Диваны</option>
+            <option value="3">Кресла</option>
+            <option value="4">Пуфы</option>
+            <option value="5">Кровати</option>
+            <option value="6">Тумбы</option>
+            <option value="7">Комоды</option>
+            <option value="8">Стулья</option>
+            <option value="9">Столы</option>
+            <option value="10">Аксессуары</option>
+          </select>
+        </div>
       </div>
       <div class="header__btns">
         <button class="btn-reset header__user">
-          <svg class="header__user">
+          <svg width="26px" height="28px" class="header__user-icon">
             <use xlink:href="images/sprite.svg#user"></use>
           </svg>
         </button>
         <button class="header__basket">
           <span class="header__basket-counter">0</span>
-          <svg class="header__user">
+          <svg width="30px" height="28px" class="header__basket">
             <use xlink:href="images/sprite.svg#basket"></use>
           </svg>
         </button>

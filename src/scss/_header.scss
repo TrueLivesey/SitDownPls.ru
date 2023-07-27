@@ -33,14 +33,84 @@
       color: $colorSecondary;
     }
   }
+
+  &__logo {
+    grid-column: 3 span;
+    display: flex;
+    align-items: center;
+
+    &-elephant {
+      margin-right: 0.62rem;
+      fill: $colorSecondary;
+    }
+
+    &-text {
+      fill: $colorPrimary;
+    }
+  }
+
+  &__logo, .nav {
+    // padding: 2rem 0;
+    padding: 2rem 0;
+  }
+
+  &__search-and-select {
+    grid-column: 10 span;
+    display: flex;
+    align-items: center;
+    border: 2px solid $colorGreyLight;
+    border-radius: 0.625rem 0rem 0rem 0.625rem;
+  }
+
+  &__btns {
+    grid-column: 2 span;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.3125rem;
+  }
+
+  &__bottom {
+    .container {
+      row-gap: 0;
+    }
+  }
+
+  &__user {
+    margin-right: 2.63rem;
+  }
+
+  &__basket {
+    position: relative;
+
+    &-counter {
+      position: absolute;
+      width: 0.875rem;
+      height: 0.9375rem;
+      border-radius: 100%;
+      top: 0.3125rem;
+      left: -0.6875rem;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.625rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      color: $colorWhite;
+      background-color: $colorSecondary;
+    }
+  }
+
+  &__user, &__basket {
+    fill: $colorPrimary;
+  }
 }
 
 // INFO (header-top list)
 .info {
   display: flex;
   grid-column: 8 span;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
 
   &__item {
     &:not(:last-child) {
@@ -57,3 +127,65 @@
   }
 }
 
+// NAV
+.nav {
+  grid-column: 9 span;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+// FORM-HEADER
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 2.25rem 0.5rem 2rem;
+  // padding: 0.625rem 2rem;
+  // border: 2px solid $colorGreyLight;
+  border-radius: 0.625rem 0rem 0rem 0.625rem;
+  background-color: $colorGreyLight;
+
+  &__label {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    cursor: default;
+  }
+
+  &__search-icon {
+    margin-right: 0.44rem;
+    fill: $colorGrey;
+  }
+
+  &__input {
+    max-width: 90%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    color: $colorGrey;
+  }
+  
+  &__arrow {
+    fill: transparent;
+    stroke: $colorPrimary;
+  }
+}
