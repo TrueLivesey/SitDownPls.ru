@@ -1,0 +1,10 @@
+.logo {
+  &__elephant {
+    margin-right: 0.62rem;
+    fill: $colorSecondary;
+  }
+  
+  &__text {
+    fill: $colorPrimary;
+  }
+}

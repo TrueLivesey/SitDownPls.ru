@@ -32,6 +32,11 @@
 
 }
 
+// IS-VISIBLE
+@mixin is-visible($display) {
+  display: $display;
+}
+
 // MEDIA
 @mixin media($minmax, $media) {
   @each $size, $resolution in $sizes {

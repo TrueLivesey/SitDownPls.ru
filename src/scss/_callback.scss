@@ -1,0 +1,118 @@
+.callback {
+  &__content {
+    grid-column: 6 span;
+  }
+
+  & &__title {
+    margin-bottom: 0.5rem;
+  }
+
+  &__text-block {
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    display: inline;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: $colorGreyShade;
+  }
+
+  &__tooltip {
+    fill: $colorSecondary;
+  }
+
+  &__picture {
+    grid-column: 6 span;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    & &__link {
+      color: $colorPrimary;
+      text-decoration: underline;
+    }
+
+    &__btn {
+      margin-bottom: 0.75rem;
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      margin-bottom: 1.88rem;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 1rem 1.12rem;
+      border-radius: 0.625rem;
+      background-color: $colorGreyLight;
+
+      &::placeholder {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.5rem;
+        color: $colorGrey;
+      }
+    }
+
+    &__label-check {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    #callback-check {
+      display: none;
+    }
+
+    #callback-check + &__check-span {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      text-align: center;
+      border: 1px solid $colorGrey;
+      border-radius: 2px;
+    }
+
+    #callback-check:checked + &__check-span {
+      border-color: $colorPrimary;
+      background-color: $colorPrimary;
+    }
+
+    #callback-check + &__check-span::before {
+      content: url("../images/check-arrow.svg");
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: -2px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transform: opacity .2s ease-in-out;
+    }
+    
+    #callback-check:checked + &__check-span::before {
+      opacity: 1;
+    }
+  }
+}

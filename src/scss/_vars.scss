@@ -21,13 +21,15 @@ $colorLime: #DAFFD1;
 $colorBone: #FFF5D1;
 
 // GAP
-$section-gap: 4.38rem;
-$grid-gap: 2rem;
+$gridGap: 2rem;
+$sectionOffset: 4.38rem;
 
 // FONT-FAMILY
+$mainFamily: 'Open-Sans', sans-serif;
 $sectionTitleFamily: 'Open-Sans', sans-serif;
 $subtitleFamily: 'Open-Sans', sans-serif;
 $descrFamily: 'Open-Sans', sans-serif;
+$bannerFamily: 'Playfair Display', sans-serif;
 
 // FONT-SIZE
 $sectionTitleSize: 2rem;
@@ -46,6 +48,9 @@ $sectionTitleLineHeight: 100%;
 $transitionHoverColor: color .2s ease-in-out;
 $transitionHoverBackgroundColor: background-color .2s ease-in-out;
 $transitionHoverFill: fill .2s ease-in-out;
+
+// PADDING
+$paddingProduct: 1.84rem 1.84rem 0 1.84rem;
 
 // MEDIA SIZES
 $sizes: ("xs":320px, "sm":480px, "md":576px, "lg":768px, "xl":1024px);

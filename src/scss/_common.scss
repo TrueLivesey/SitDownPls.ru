@@ -1,8 +1,18 @@
 @import './_vars', './_mixins', './_libs', './fonts/fonts';
 @import './_slider';
 @import './select';
+@import './_logo';
 @import './_header';
 @import './_special';
+@import './_hero';
+@import './_products';
+@import './_rating';
+@import './_banner';
+@import './_top-categories';
+@import './_useful';
+@import './_callback';
+@import './_validate';
+@import './_footer';
 
 html {
   box-sizing: border-box;
@@ -12,7 +22,7 @@ html {
 
 body {
   height: auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mainFamily;
   font-size: 16px;
   line-height: normal;
   color: $colorBlack;
@@ -44,12 +54,12 @@ p {
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: $grid-gap;
+  gap: $gridGap;
 }
 
 .title-h2 {
   margin-bottom: 1.62rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $sectionTitleFamily;
   font-weight: 400;
   font-size: 2rem;
   font-style: normal;
@@ -57,7 +67,7 @@ p {
 }
 
 .title-h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $subtitleFamily;
   font-weight: 700;
   font-size: 1rem;
   font-style: normal;
@@ -70,7 +80,7 @@ p {
 
 .btn {
   padding: 1.19rem 2.19rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $mainFamily;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -78,4 +88,32 @@ p {
   color: $colorPrimary;
   border: 2px solid $colorPrimary;
   border-radius: 0.625rem;
+}
+
+.btn-revert {
+  padding: 1.19rem 2.19rem;
+  font-family: $mainFamily;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  border: none;
+  border-radius: 0.625rem;
+  color: $colorWhite;
+  background-color: $colorPrimary
+}
+
+.btn-more {
+  background-color: $colorPrimary;
+  color: $colorWhite;
+  border: none;
+  font-weight: 700;
+}
+
+.section-offset {
+  margin-bottom: $sectionOffset;
+}
+
+.is-hidden {
+  display: none;
 }

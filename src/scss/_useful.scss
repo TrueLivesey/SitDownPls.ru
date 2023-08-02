@@ -1,0 +1,26 @@
+.useful {
+  .container {
+    position: relative;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 11.875rem;
+    padding: 1.88rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-break: keep-all;
+
+    &:nth-child(1) {
+      max-width: 34rem;
+    }
+  }
+}

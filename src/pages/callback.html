@@ -1,0 +1,66 @@
+<section class="callback section-offset">
+  <div class="container grid">
+    <div class="callback__content">
+      <h2 class="title-h2 callback__title">Мы&nbsp;всегда вам рады!</h2>
+      <div class="callback__text-block">
+        <p class="callback__subtitle">
+          Безусловно, новая модель организационной деятельности в&nbsp;значительной степени
+          обусловливает важность распределения внутренних резервов и&nbsp;ресурсов.
+        </p>
+        <svg id="tool" width="14px" height="14px" class="callback__tooltip">
+          <use xlink:href="images/sprite.svg#tooltip"></use>
+        </svg>
+      </div>
+      <form id="callback-form" action="POST" class="callback-form">
+        <label for="callback-name" class="callback-form__label">
+          <input
+            id="callback-name"
+            name="callback-name"
+            type="text"
+            placeholder="Как вас зовут?"
+            class="callback-form__input"
+          />
+        </label>
+        <label for="callback-phone" class="callback-form__label">
+          <input
+            id="callback-phone"
+            name="callback-phone"
+            type="tel"
+            placeholder="Ваш телефон"
+            class="callback-form__input"
+          />
+        </label>
+        <label for="callback-email" class="callback-form__label">
+          <input
+            id="callback-email"
+            name="callback-email"
+            type="callback-email"
+            placeholder="Ваш e-mail"
+            class="callback-form__input"
+          />
+        </label>
+        <button class="btn-reset btn-revert callback-form__btn">Отправить</button>
+        <label for="callback-check" class="callback-form__label-check">
+          <input
+            id="callback-check"
+            name="callback-check"
+            type="checkbox"
+            class="callback-form__input-check"
+          />
+          <span class="callback-form__check-span"></span>
+          Принимаю
+          <a href="#" target="_blank" class="callback-form__link">Пользовательское соглашение</a>
+        </label>
+      </form>
+    </div>
+    <picture class="callback__picture">
+      <source srcset="images/callback.webp" type="image/webp" />
+      <img
+        loading="lazy"
+        src="images/callback.png"
+        alt="3d модель интерьера"
+        class="image callback__img"
+      />
+    </picture>
+  </div>
+</section>

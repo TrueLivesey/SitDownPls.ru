@@ -38,15 +38,6 @@
     grid-column: 3 span;
     display: flex;
     align-items: center;
-
-    &-elephant {
-      margin-right: 0.62rem;
-      fill: $colorSecondary;
-    }
-
-    &-text {
-      fill: $colorPrimary;
-    }
   }
 
   &__logo, .nav {

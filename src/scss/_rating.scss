@@ -1,0 +1,12 @@
+.rating {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .btn-more {
+    text-align: center;
+  }
+}

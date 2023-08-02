@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/@popperjs/core@2"></script>
+    <script defer src="https://unpkg.com/tippy.js@6"></script>
     <script defer src="js/main.js"></script>
   </head>
   <body>
     @include('pages/header.html')
 
     <main>
-      @include('pages/special.html') @include('pages/rating.html') @include('pages/banner.html')
-      @include('pages/top-categories.html')
+      @include('pages/hero.html') @include('pages/special.html') @include('pages/rating.html')
+      @include('pages/banner.html') @include('pages/top-categories.html')
+      @include('pages/useful.html') @include('pages/callback.html')
     </main>
 
     @include('pages/footer.html')
