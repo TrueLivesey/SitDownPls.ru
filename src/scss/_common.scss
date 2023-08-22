@@ -1,18 +1,27 @@
 @import './_vars', './_mixins', './_libs', './fonts/fonts';
 @import './_slider';
 @import './select';
+@import './burger';
 @import './_logo';
-@import './_header';
-@import './_special';
-@import './_hero';
-@import './_products';
 @import './_rating';
-@import './_banner';
-@import './_top-categories';
-@import './_useful';
-@import './_callback';
+@import './_products';
 @import './_validate';
-@import './_footer';
+@import './_tooltip';
+@import './_characteristics';
+@import './_products-similar';
+@import './_range';
+@import './_modal';
+@import './pages/_header';
+@import './pages/_special';
+@import './pages/_hero';
+@import './pages/_top-rating';
+@import './pages/_banner';
+@import './pages/_top-categories';
+@import './pages/_useful';
+@import './pages/_callback';
+@import './pages/_catalog';
+@import './pages/product-page';
+@import './pages/_footer';
 
 html {
   box-sizing: border-box;
@@ -21,11 +30,19 @@ html {
 }
 
 body {
-  height: auto;
   font-family: $mainFamily;
   font-size: 16px;
   line-height: normal;
   color: $colorBlack;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  flex: 1 1 auto;
 }
 
 a {
@@ -45,33 +62,62 @@ p {
   margin: 0;
 }
 
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   max-width: 1310px;
   padding: 0 15px;
   margin: 0 auto;
+
+  @include media('max', 'xl') {
+    max-width: 1352px;
+    padding: 0 36px;
+  }
+
+  @include media('max', 'lg') {
+    max-width: 1424px;
+    padding: 0 72px;
+  }
+
+  @include media('max', 'md') {
+    max-width: 1304px;
+    padding: 0 12px;
+  }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: $gridGap;
+  
+  @include media('max', 'xl') {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  
+  @include media('max', 'lg') {
+    grid-template-columns: repeat((6, 1fr));
+  }
+  
+  @include media('max', 'md') {
+    gap: 1rem;
+  }
 }
 
 .title-h2 {
   margin-bottom: 1.62rem;
-  font-family: $sectionTitleFamily;
-  font-weight: 400;
-  font-size: 2rem;
-  font-style: normal;
-  line-height: 100%;
+  @include text($sectionTitleFamily, $sectionTitleSize, normal, 400, 100%);
+
+  @include media('max', 'md') {
+    font-size: 1.5rem;
+  }
 }
 
 .title-h3 {
-  font-family: $subtitleFamily;
-  font-weight: 700;
-  font-size: 1rem;
-  font-style: normal;
-  line-height: 1rem;
+  @include text($subtitleFamily, $defaultSize, normal, 700, 1rem);
 }
 
 .product-title {
@@ -80,27 +126,58 @@ p {
 
 .btn {
   padding: 1.19rem 2.19rem;
-  font-family: $mainFamily;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 100%;
+  @include text($mainFamily, $defaultSize, normal, 600, 100%);
   color: $colorPrimary;
   border: 2px solid $colorPrimary;
   border-radius: 0.625rem;
+  transition: background-color $transitionState, outline $transitionState, color $transitionState, border-color $transitionState;
+
+  &:focus-visible {
+    outline: none;
+    color: $colorWhite;
+    background-color: $colorPrimaryLight;
+  }
+  
+  .no-touch &:hover {
+    color: $colorWhite;
+    background-color: $colorPrimary;
+  }
+
+  &:active {
+    background-color: $colorPrimaryShade;
+    border-color: $colorPrimaryShade;
+  }
 }
 
 .btn-revert {
   padding: 1.19rem 2.19rem;
-  font-family: $mainFamily;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%;
+  @include text($mainFamily, $defaultSize, normal, 600, 100%);
   border: none;
   border-radius: 0.625rem;
   color: $colorWhite;
-  background-color: $colorPrimary
+  background-color: $colorPrimary;
+  transition: background-color $transitionState, outline $transitionState;
+
+  &:focus-visible {
+    // outline: none;
+    outline: 2px solid $colorPrimaryShade;
+    background-color: $colorPrimaryLight;
+  }
+  
+  .no-touch &:hover {
+    background-color: $colorPrimaryLight;
+  }
+
+  &:active {
+    background-color: $colorPrimaryShade;
+  }
+
+  &:disabled {
+    background-color: $colorGreyMd;
+    border-color: $colorGreyMd;
+    color: $colorGrey;
+    cursor: auto;
+  }
 }
 
 .btn-more {
@@ -108,6 +185,245 @@ p {
   color: $colorWhite;
   border: none;
   font-weight: 700;
+  transition: background-color $transitionState, outline $transitionState;
+}
+
+.btn-arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0 1.88rem 1.88rem 1.88rem;
+  border: none;
+  line-height: 120%;
+  color: $colorPrimary;
+  transition: background-color $transitionState, color $transitionState, opacity $transitionState, stroke $transitionState;
+  
+  &__arrow {
+    padding-left: 0.375rem;
+    fill: transparent;
+    stroke: $colorPrimary;
+  }
+  
+  &__icon {
+    margin-left: 6px;
+    border-radius: 100%;
+    stroke: $colorPrimary;
+    transition: background-color $transitionState, color $transitionState, opacity $transitionState, stroke $transitionState;
+
+    path {
+      stroke: $colorPrimary;
+      transition: stroke $transitionState;
+    }
+    
+    circle {
+      stroke: $colorPrimary;
+      transition: stroke $transitionState;
+    }
+  }
+
+  &__text {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $colorPrimary;
+      opacity: 0;
+      transition: opacity $transitionState;;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    .btn-arrow__text {
+      &::after {
+        opacity: 1;
+      }
+    }
+    
+    .btn-arrow__icon {
+      background-color: $colorPrimaryLight;
+      
+      path {
+        stroke: $colorWhite;
+      }
+    }
+  }
+  
+  .no-touch &:hover {
+    .btn-arrow__icon {
+      background-color: $colorPrimary;
+
+      path {
+        stroke: $colorWhite;
+      }
+    }
+  }
+
+  &:active {
+    color: $colorPrimaryShade;
+
+    .btn-arrow__icon {
+      background-color: $colorPrimaryShade;
+
+      path {
+        stroke: $colorWhite;
+      }
+
+      circle {
+        stroke: $colorPrimaryShade;
+      }
+    }
+  }
+}
+
+.btn-slider {
+  fill: transparent;
+  stroke: $colorPrimary;
+  border-radius: 100%;
+  transition: background-color $transitionState, stroke $transitionState;
+
+  circle {
+    transition: stroke $transitionState;
+  }
+
+  &:disabled {
+    stroke: $colorGrey;
+  }
+  
+  .no-touch &:hover {
+    background-color: $colorPrimary;
+    stroke: $colorWhite;
+  }
+  
+  &:active {
+    background-color: $colorPrimaryShade;
+    stroke: $colorWhite;
+
+    circle {
+      stroke: $colorPrimaryShade;
+    }
+  }
+}
+
+.btn-close-wrapper {
+  position: relative;
+  max-height: 1.25rem;
+}
+
+.btn-close-state {
+  z-index: 1;
+
+  path {
+    transition: fill $transitionState;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    left: -2px;
+    top: -2px;
+    background-color: $colorPinkViolet;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity $transitionState;
+  }
+
+  &:focus-visible {
+    &::before {
+      opacity: 1;
+    }
+
+    path {
+      fill: $colorPrimary;
+    }
+  }
+
+  .no-touch &:hover {
+    path {
+      fill: $colorPrimary;
+    }
+  }
+
+  &:active {
+    path {
+      fill: $colorPrimaryShade;
+    }
+  }
+}
+
+.input-states {
+  &:focus-visible {
+    outline: none;
+    border-color: $colorPrimary;
+    background-color: $colorPinkLight
+  }
+
+  .no-touch &:hover {
+    background-color: $colorGreyMd;
+  }
+
+  &:active {
+    border-color: $colorGreenInput;
+  }
+}
+
+.link-state {
+  transition: background-color $transitionState, outline $transitionState, color $transitionState;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      top: 0;
+      left: -10px;
+      opacity: 0;
+      background-color: $colorPinkViolet;
+      transition: opacity $transitionState;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      top: 0;
+      right: -10px;
+      opacity: 0;
+      background-color: $colorPinkViolet;
+      transition: opacity $transitionState;
+    }
+
+    &:focus-visible {
+      outline: none;
+      color: $colorPrimary;
+      background-color: $colorPinkViolet;
+
+      &::before {
+        opacity: 1;
+      } 
+
+      &::after {
+        opacity: 1;
+      }
+    }
+    
+    .no-touch &:hover {
+      color: $colorPrimary;
+    }
+
+    &:active {
+      color: $colorPrimaryShade;
+    }
 }
 
 .section-offset {
@@ -116,4 +432,21 @@ p {
 
 .is-hidden {
   display: none;
+}
+
+.color-primary-shade {
+  color: $colorPrimaryShade;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.3;
+  z-index: 99;
+  background: $colorBlack;
 }

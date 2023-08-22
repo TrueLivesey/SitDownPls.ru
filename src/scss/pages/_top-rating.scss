@@ -1,0 +1,15 @@
+.main-page {
+  .top-rating {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    .btn-more {
+      padding: 1.375rem 2.25rem;
+      text-align: center;
+    }
+  }
+}

@@ -1,10 +1,14 @@
 .logo {
   &__elephant {
-    margin-right: 0.62rem;
+    margin-right: 0.375rem;
     fill: $colorSecondary;
   }
   
   &__text {
     fill: $colorPrimary;
+  }
+
+  .no-touch &:hover {
+    background-color: transparent;
   }
 }

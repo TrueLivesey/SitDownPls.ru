@@ -4,14 +4,24 @@
     <div class="grid top-categories__grid">
       <div class="category category-big">
         <div class="category__list-of-types">
-          <span class="category__tipe">Прямые</span>
-          <span class="category__tipe">Угловые</span>
-          <span class="category__tipe">Модульные</span>
+          <span class="category__type category__type--big">Прямые</span>
+          <span class="category__type category__type--big">Угловые</span>
+          <span class="category__type category__type--big">Модульные</span>
         </div>
-        <span class="category__title">Диваны</span>
+        <a href="#" class="btn-reset btn-arrow category__btn-title category__btn-title--margin">
+          <span class="category__title category__title--big btn-arrow__text">Диваны</span>
+          <svg
+            width="22px"
+            height="22px"
+            class="btn-arrow__arrow category__icon-title category__icon-title--big"
+          >
+            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+          </svg>
+        </a>
         <picture>
           <source srcset="images/category_1.webp" type="image/webp" />
           <img
+            id="category-big-img"
             loading="lazy"
             src="images/category_1.png"
             class="category__img"
@@ -20,106 +30,197 @@
             alt="Прямой, угловой и&nbsp;модульный диван"
           />
         </picture>
-        <button class="btn-reset btn category__btn">
-          В каталог
-          <svg width="22px" height="22px" class="category__arrow">
-            <use xlink:href="images/sprite.svg#category-arrow"></use>
+        <button aria-label="В каталог" class="btn-reset btn-arrow top-categories__btn">
+          <span class="category__btn-text btn-arrow__text">В каталог</span>
+          <svg
+            width="22"
+            height="22"
+            viewbox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="btn-arrow__icon"
+          >
+            <path
+              d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="10" stroke-width="2" />
           </svg>
         </button>
       </div>
       <div class="category category-big">
-        <div class="category__list-of-types">
-          <span class="category__tipe">Мягкие</span>
-          <span class="category__tipe">Кресла-кровати</span>
+        <div class="category__list-of-types category__list-of-types-mobile">
+          <span class="category__type">Мягкие</span>
+          <span class="category__type">Кресла-кровати</span>
         </div>
-        <span class="category__title">Кресла</span>
+        <a href="#" class="btn-reset btn-arrow category__btn-title">
+          <span class="category__title category__title-mobile btn-arrow__text">Кресла</span>
+          <svg width="22px" height="22px" class="btn-arrow__arrow category__icon-title">
+            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+          </svg>
+        </a>
         <picture>
           <source srcset="images/category_2.webp" type="image/webp" />
           <img
+            id="category-big-img-2"
             loading="lazy"
             src="images/category_2.png"
-            class="category__img"
+            class="category__img category__img-mobile"
             width="300"
             height="300"
             alt="Мягкие кресла-кровати"
           />
         </picture>
-        <button class="btn-reset btn category__btn">
-          В каталог
-          <svg width="22px" height="22px" class="category__arrow">
-            <use xlink:href="images/sprite.svg#category-arrow"></use>
+        <button aria-label="В каталог" class="btn-reset btn-arrow top-categories__btn">
+          <span class="category__btn-text btn-arrow__text">В каталог</span>
+          <svg
+            width="22"
+            height="22"
+            viewbox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="btn-arrow__icon"
+          >
+            <path
+              d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="10" stroke-width="2" />
           </svg>
         </button>
       </div>
       <div class="category category-small">
-        <div class="category__list-of-types">
-          <span class="category__tipe">Односпальные</span>
-          <span class="category__tipe">Двуспальные</span>
+        <div class="category__list-of-types category__list-of-types-mobile">
+          <span class="category__type">Односпальные</span>
+          <span class="category__type">Двуспальные</span>
         </div>
-        <span class="category__title">Кровати</span>
+        <a href="#" class="btn-reset btn-arrow category__btn-title">
+          <span class="category__title category__title-mobile btn-arrow__text">Кровати</span>
+          <svg width="22px" height="22px" class="btn-arrow__arrow category__icon-title">
+            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+          </svg>
+        </a>
         <picture>
           <source srcset="images/category_3.webp" type="image/webp" />
           <img
+            id="category-big-img-3"
             loading="lazy"
             src="images/category_3.png"
-            class="category__img"
+            class="category__img category__img-mobile"
             width="300"
             height="300"
             alt="Односпальные и&nbsp;двуспальные кровати"
           />
         </picture>
-        <button class="btn-reset btn category__btn">
-          В каталог
-          <svg width="22px" height="22px" class="category__arrow">
-            <use xlink:href="images/sprite.svg#category-arrow"></use>
+        <button aria-label="В каталог" class="btn-reset btn-arrow top-categories__btn">
+          <span class="category__btn-text btn-arrow__text">В каталог</span>
+          <svg
+            width="22"
+            height="22"
+            viewbox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="btn-arrow__icon"
+          >
+            <path
+              d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="10" stroke-width="2" />
           </svg>
         </button>
       </div>
       <div class="category category-small">
-        <div class="category__list-of-types">
-          <span class="category__tipe">Тумбы</span>
-          <span class="category__tipe">Комоды</span>
+        <div class="category__list-of-types category__list-of-types-mobile">
+          <span class="category__type">Тумбы</span>
+          <span class="category__type">Комоды</span>
         </div>
-        <span class="category__title">Тумбы и&nbsp;комоды</span>
+        <a href="#" class="btn-reset btn-arrow category__btn-title">
+          <span class="category__title category__title-mobile btn-arrow__text"
+            >Тумбы и&nbsp;комоды</span
+          >
+          <svg width="22px" height="22px" class="btn-arrow__arrow category__icon-title">
+            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+          </svg>
+        </a>
         <picture>
           <source srcset="images/category_4.webp" type="image/webp" />
           <img
+            id="category-big-img-4"
             loading="lazy"
             src="images/category_4.png"
-            class="category__img"
+            class="category__img category__img-mobile"
             width="300"
             height="300"
             alt="Тумбы и&nbsp;комоды"
           />
         </picture>
-        <button class="btn-reset btn category__btn">
-          В каталог
-          <svg width="22px" height="22px" class="category__arrow">
-            <use xlink:href="images/sprite.svg#category-arrow"></use>
+        <button aria-label="В каталог" class="btn-reset btn-arrow top-categories__btn">
+          <span class="category__btn-text btn-arrow__text">В каталог</span>
+          <svg
+            width="22"
+            height="22"
+            viewbox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="btn-arrow__icon"
+          >
+            <path
+              d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="10" stroke-width="2" />
           </svg>
         </button>
       </div>
       <div class="category category-small">
-        <div class="category__list-of-types">
-          <span class="category__tipe">Деревянные</span>
-          <span class="category__tipe">Металлокаркас</span>
+        <div class="category__list-of-types category__list-of-types-mobile">
+          <span class="category__type">Деревянные</span>
+          <span class="category__type">Металлокаркас</span>
         </div>
-        <span class="category__title">Стулья</span>
+        <a href="#" class="btn-reset btn-arrow category__btn-title">
+          <span class="category__title category__title-mobile btn-arrow__text">Стулья</span>
+          <svg width="22px" height="22px" class="btn-arrow__arrow category__icon-title">
+            <use xlink:href="images/sprite.svg#btn-arrow"></use>
+          </svg>
+        </a>
         <picture>
           <source srcset="images/category_5.webp" type="image/webp" />
           <img
+            id="category-big-img-5"
             loading="lazy"
             src="images/category_5.png"
-            class="category__img"
+            class="category__img category__img-mobile"
             width="300"
             height="300"
             alt="Деревянные или металлокаркасные стулья"
           />
         </picture>
-        <button class="btn-reset btn category__btn">
-          В каталог
-          <svg width="22px" height="22px" class="category__arrow">
-            <use xlink:href="images/sprite.svg#category-arrow"></use>
+        <button aria-label="В каталог" class="btn-reset btn-arrow top-categories__btn">
+          <span class="category__btn-text btn-arrow__text">В каталог</span>
+          <svg
+            width="22"
+            height="22"
+            viewbox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="btn-arrow__icon"
+          >
+            <path
+              d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="11" cy="11" r="10" stroke-width="2" />
           </svg>
         </button>
       </div>

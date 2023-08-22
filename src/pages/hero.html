@@ -1,27 +1,36 @@
 <section class="hero section-offset">
   <div id="hero-slider" class="swiper hero__slider">
     <div class="swiper-wrapper">
-      <div class="swiper-slide hero__slide">
+      <div id="hero-slide-1" class="swiper-slide hero__slide">
         <div class="container hero__container">
           <h3 class="title-h3 hero__title">Скидка&nbsp;15% на&nbsp;первую покупку</h3>
-          <button class="btn-reset btn-revert">Получить!</button>
+          <button aria-label="Получить" class="btn-reset btn-revert hero-slider__btn">
+            Получить!
+          </button>
         </div>
       </div>
-      <div class="swiper-slide hero__slide">
+      <div id="hero-slide-2" class="swiper-slide hero__slide">
         <div class="container hero__container">
           <h3 class="title-h3 hero__title">1000+ аксессуаров для дома</h3>
-          <button class="btn-reset btn-revert">Подробнее</button>
+          <button aria-label="Получить" class="btn-reset btn-revert hero-slider__btn">
+            Подробнее
+          </button>
         </div>
       </div>
-      <div class="swiper-slide hero__slide">
+      <div id="hero-slide-3" class="swiper-slide hero__slide">
         <div class="container hero__container">
           <h3 class="title-h3 hero__title hero__title--white">
             Коллекция стильного и&nbsp;яркого текстиля
           </h3>
-          <button class="btn-reset btn-revert">Подробнее</button>
+          <button aria-label="Подробнее" class="btn-reset btn-revert hero-slider__btn">
+            Подробнее
+          </button>
         </div>
       </div>
     </div>
     <div class="swiper-pagination hero__pagination"></div>
+  </div>
+  <div class="hero__btn-mobile-container">
+    <button aria-label="Получить" class="btn btn-revert hero__btn-mobile">Получить!</button>
   </div>
 </section>

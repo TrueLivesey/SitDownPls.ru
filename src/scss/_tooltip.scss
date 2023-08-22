@@ -1,0 +1,5 @@
+.tippy-box {
+  text-align: center;
+  @include text($mainFamily, 0.5625rem, normal, 400, 0.875rem);
+  border-radius: 0;
+}

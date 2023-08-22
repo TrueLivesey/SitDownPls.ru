@@ -1,0 +1,82 @@
+.main-page {
+  .useful {
+    .container {
+      position: relative;
+    }
+  
+    &__text-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-height: 11.875rem;
+      padding: 1.88rem;
+    }
+  
+    &__text {
+      @include text($mainFamily, $descrSize, normal, 400, 138%);
+      word-break: keep-all;
+  
+      &:nth-child(1) {
+        max-width: 34rem;
+      }
+    }
+  
+    &__btn.useful__btn {
+      padding: 1.0625rem 2.125rem;
+    }
+  }
+  
+  // MEDIA
+  @include media('max', 'xl') {
+    .useful {
+      &__text {
+        &:nth-child(1) {
+          max-width: 14.25rem;
+        }
+  
+        @include text($mainFamily, $defaultSize, normal, 400, normal);
+      }
+  
+      .swiper-slide {
+        max-width: 18.5rem;
+      }
+  
+      &__text-block {
+        min-height: 12.0625rem;
+      }
+  
+      &__btn.useful__btn {
+        padding: 1.0625rem 2.0625rem;
+      }
+  
+      .button-prev {
+        right: 5.0625rem;
+      }
+  
+      .button-next {
+        right: 2.25rem;
+      }
+    }
+  }
+  
+  @include media('max', 'lg') {
+    .useful {
+      .button-prev {
+        right: 7.3125rem;
+        top: -1px;
+      }
+    
+      .button-next {
+        right: 4.5rem;
+        top: -1px;
+      }
+    }
+  }
+  
+  @include media('max', 'md') {
+    .useful.useful {
+      margin-bottom: 7.4375rem;
+    }
+  }
+}

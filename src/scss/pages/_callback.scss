@@ -1,0 +1,219 @@
+.callback {
+  &__content {
+    grid-column: 6 span;
+  }
+
+  & &__title {
+    margin-bottom: 0.5625rem;
+  }
+
+  &__text-block {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    position: relative;
+    @include text($mainFamily, $subtitleSize, normal, 400, normal);
+    color: $colorGreyShade;
+  }
+
+  &__tooltip {
+    margin-bottom: -0.125rem;
+    fill: $colorSecondary;
+  }
+
+  &__picture {
+    grid-column: 6 span;
+    
+    &-2 {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-top: 1.5625rem;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    & &__link {
+      color: $colorPrimary;
+      text-decoration: underline;
+      transition: color $transitionState;
+
+      &:focus-visible {
+        outline: none;
+        color: $colorPrimaryLight;
+      }
+
+      .no-touch &:hover {
+        color: $colorPrimaryLight;
+      }
+
+      &:active {
+        color: $colorPrimaryShade;
+      }
+    }
+
+    &__btn {
+      margin-bottom: 0.75rem;
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      margin-bottom: 1.88rem;
+    }
+
+    &__input {
+      width: 100%;
+      padding: calc(1rem - 1px) calc(1.12rem - 1px);
+      border: 1px solid transparent;
+      border-radius: 0.625rem;
+      background-color: $colorGreyLight;
+
+      &::placeholder {
+        @include text($mainFamily, $defaultSize, normal, 400, 2.5rem);
+        color: $colorGrey;
+      }
+    }
+
+    &__label-check {
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include text($mainFamily, $subtitleSize, normal, 400, normal);
+    }
+
+    &__text {
+      @include text($mainFamily, 0.875rem, normal, 400, normal);
+    }
+
+    #callback-check {
+      display: none;
+    }
+
+    #callback-check + &__check-span {
+      position: relative;
+      display: block;
+      width: 0.875rem;
+      height: 0.875rem;
+      margin-right: 10px;
+      text-align: center;
+      border: 1px solid $colorGrey;
+      border-radius: 2px;
+    }
+
+    #callback-check:checked + &__check-span {
+      border-color: $colorPrimary;
+      background-color: $colorPrimary;
+    }
+
+    #callback-check + &__check-span::before {
+      content: url("../images/check-arrow.svg");
+      position: absolute;
+      top: -4px;
+      left: 1px;
+      opacity: 0;
+      transform: opacity .2s ease-in-out;
+    }
+    
+    #callback-check:checked + &__check-span::before {
+      opacity: 1;
+    }
+  }
+}
+
+// MEDIA
+@include media('max', 'xl') {
+  .callback {
+    &__content {
+      grid-column: 4 span;
+    }
+
+    &-form {
+      &__label-check {
+        flex-wrap: wrap;
+      }
+    }
+
+    &__picture {
+      grid-column: 5 span;
+    }
+
+    &__img {
+      margin-top: 4.8125rem;
+    }
+  }
+}
+
+@include media('max', 'lg') {
+  .callback {
+    &__content {
+      grid-column: 4 span;
+    }
+
+    &__tooltip {
+      height: 100%;
+    }
+
+    &__picture {
+      display: none;
+      
+      &-2 {
+        display: block;
+        grid-column: 2 span;
+      }
+    }
+
+    &__img {
+      margin-top: 0.875rem;
+    }
+  }
+}
+
+@include media('max', 'md') {
+  .callback {
+    margin-bottom: 1.4375rem !important;
+
+    &__content {
+      grid-column: 6 span;
+    }
+
+    &__img {
+      display: none;
+    }
+
+    .callback-form {
+      &__label-check {
+        padding-left: 1.25rem;
+        margin-bottom: 1.875rem;
+      }
+
+      &__text,
+      &__link {
+        font-size: 0.75rem;
+      }
+
+      &__btn {
+        margin-bottom: 0.75rem;
+      }
+      
+      &__label-check {
+        padding: 0;
+      }
+    }
+
+    #callback-check + .callback-form__check-span {
+      margin-right: 6px;
+    }
+  }
+}

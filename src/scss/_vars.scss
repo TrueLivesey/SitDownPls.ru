@@ -20,21 +20,27 @@ $colorBlack20: rgba(0, 0, 0, 0.2);
 $colorLime: #DAFFD1;
 $colorBone: #FFF5D1;
 
+:root {
+  --color-white: #fff;
+}
+
 // GAP
 $gridGap: 2rem;
 $sectionOffset: 4.38rem;
 
 // FONT-FAMILY
-$mainFamily: 'Open-Sans', sans-serif;
-$sectionTitleFamily: 'Open-Sans', sans-serif;
-$subtitleFamily: 'Open-Sans', sans-serif;
-$descrFamily: 'Open-Sans', sans-serif;
+$mainFamily: 'Open Sans', sans-serif;
+$sectionTitleFamily: 'Open Sans', sans-serif;
+$subtitleFamily: 'Open Sans', sans-serif;
+$descrFamily: 'Open Sans', sans-serif;
 $bannerFamily: 'Playfair Display', sans-serif;
 
 // FONT-SIZE
 $sectionTitleSize: 2rem;
 $subtitleSize: 0.875rem;
 $descrSize: 1.5rem;
+$localTitle: 1.125rem;
+$defaultSize: 1rem;
 
 // FONT-WEIGHT
 $sectionTitleWeight: 400;
@@ -44,13 +50,21 @@ $descrWeight: 400;
 // LINE-HEIGHT
 $sectionTitleLineHeight: 100%;
 
+// BORDER-RADIUS
+$borderRadius: 10px;
+
 // TRANSITION
 $transitionHoverColor: color .2s ease-in-out;
 $transitionHoverBackgroundColor: background-color .2s ease-in-out;
 $transitionHoverFill: fill .2s ease-in-out;
+$transitionDefault: .2s ease-in-out;
+$transitionState: .1s ease-in-out;
+$transitionTime: .2s;
+$transitionMega: .7s;
+$transitionFunction: ease-in-out;
 
 // PADDING
-$paddingProduct: 1.84rem 1.84rem 0 1.84rem;
+$paddingProduct: 1.84rem 1.84rem 0 1.9rem;
 
 // MEDIA SIZES
 $sizes: ("xs":320px, "sm":480px, "md":576px, "lg":768px, "xl":1024px);

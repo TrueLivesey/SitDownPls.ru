@@ -1,0 +1,49 @@
+.noUi-target {
+  background: $colorGreyMd;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  height: 3px;
+}
+
+.noUi-connect {
+  background: $colorPrimary;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+  display: none;
+}
+
+.noUi-handle {
+  border: none;
+  border-radius: 3px;
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 13px solid $colorPrimary;
+  background: transparent;
+  cursor: default;
+  box-shadow: none;
+  transition: border-bottom-color $transitionState;
+
+  &:focus-visible {
+    outline: none;
+    border-bottom-color: $colorPrimaryShade;
+  }
+
+  .no-touch &:hover {
+    border-bottom-color: $colorPrimaryLight;
+  }
+  
+  &:active {
+    border-bottom-color: $colorPrimaryShade;
+  }
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 13px;
+  height: 13px;
+  height: auto;
+  top: 0;
+  right: -7px;
+}

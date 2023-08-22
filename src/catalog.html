@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.css"
+      integrity="sha512-MKxcSu/LDtbIYHBNAWUQwfB3iVoG9xeMCm32QV5hZ/9lFaQZJVaXfz9aFa0IZExWzCpm7OWvp9zq9gVip/nLMg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"
+    ></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper catalog-wrapper">
+      @include('pages/header.html')
+
+      <main class="catalog-main">
+        <div class="container">
+          <div id="js-router" class="router">
+            <div class="router__item">
+              <a href="/" aria-label="Главная" class="router__link">Главная </a>
+            </div>
+            <div class="router__item">
+              <span class="router__slash">/</span>
+              <span id="js-catalog" class="router__text router__text--primary">Каталог</span>
+            </div>
+          </div>
+          <div class="catalog-main__content grid">
+            <div class="catalog-sidebar">
+              <div class="catalog-filters">
+                <span class="catalog-filters__title catalog-filters__title-1"
+                  >Фильтровать&nbsp;по:</span
+                >
+                <span class="catalog-filters__title catalog-filters__title-2">Фильтры:</span>
+
+                <!-- type -->
+                <h4 class="catalog-filters__subtitle">Категория</h4>
+                <div class="catalog-check-group catalog-filters__item">
+                  <label tabindex="0" for="catalog-cate-check" class="catalog-check">
+                    <input
+                      id="catalog-cate-check"
+                      name="catalog-cate-check"
+                      type="checkbox"
+                      data-value="sofas"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Диваны
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-2" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-2"
+                      name="catalog-cate-check-2"
+                      type="checkbox"
+                      data-value="armchairs"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Кресла
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-3" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-3"
+                      name="catalog-cate-check-3"
+                      type="checkbox"
+                      data-value="poufs"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Пуфы
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-4" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-4"
+                      name="catalog-cate-check-4"
+                      type="checkbox"
+                      data-value="beds"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Кровати
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-5" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-5"
+                      name="catalog-cate-check-5"
+                      type="checkbox"
+                      data-value="curbstones"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Тумбы
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-6" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-6"
+                      name="catalog-cate-check-6"
+                      type="checkbox"
+                      data-value="dressers"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Комоды
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-7" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-7"
+                      name="catalog-cate-check-7"
+                      type="checkbox"
+                      data-value="chairs"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Стулья
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-8" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-8"
+                      name="catalog-cate-check-8"
+                      type="checkbox"
+                      data-value="tables"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Столы
+                  </label>
+
+                  <label tabindex="0" for="catalog-cate-check-9" class="catalog-check">
+                    <input
+                      id="catalog-cate-check-9"
+                      name="catalog-cate-check-9"
+                      type="checkbox"
+                      data-value="accessories"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Аксессуары
+                  </label>
+                </div>
+
+                <!-- price -->
+                <div class="catalog-filters-price">
+                  <h4 class="catalog-filters__subtitle catalog-filters-price__title">Цена</h4>
+                  <div class="catalog-filters-price__inputs">
+                    <label for="price-input" class="catalog-filters-price__label">
+                      <span class="catalog-filters-price__span">от</span>
+                      <input
+                        id="price-input"
+                        aria-label="нижний диапазон цены"
+                        type="text"
+                        name="price-input"
+                        min="500"
+                        max="250000"
+                        placeholder="500"
+                        class="catalog-filters-price__input catalog-filters-price__input-1"
+                      />
+                    </label>
+                    <label for="price-input-2" class="catalog-filters-price__label">
+                      <span class="catalog-filters-price__span">до</span>
+                      <input
+                        id="price-input-1"
+                        aria-label="верхний диапазон цены"
+                        type="text"
+                        name="price-input-1"
+                        min="500"
+                        max="250000"
+                        placeholder="999 999"
+                        class="catalog-filters-price__input catalog-filters-price__input-2"
+                      />
+                    </label>
+                  </div>
+                  <div id="js-range-slider" class="catalog-filters-price__slider"></div>
+                </div>
+
+                <!-- discount -->
+                <h4 class="catalog-filters__subtitle">Скидка</h4>
+                <div class="catalog-check-group catalog-filters__item catalog-filters__discount">
+                  <label for="catalog-discount-check" class="catalog-check">
+                    <input
+                      id="catalog-discount-check"
+                      name="catalog-discount-check"
+                      type="checkbox"
+                      data-value="more-than-5000"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Более&nbsp;5&nbsp;000
+                  </label>
+                  <label for="catalog-discount-check-2" class="catalog-check">
+                    <input
+                      id="catalog-discount-check-2"
+                      name="catalog-discount-check-2"
+                      type="checkbox"
+                      data-value="less-than-5000"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Менее&nbsp;5&nbsp;000
+                  </label>
+                  <label for="catalog-discount-check-3" class="catalog-check">
+                    <input
+                      id="catalog-discount-check-3"
+                      name="catalog-discount-check-3"
+                      type="checkbox"
+                      data-value="not-important"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Не&nbsp;важно
+                  </label>
+                </div>
+
+                <!-- colors -->
+                <h4 class="catalog-filters__subtitle">Цвет</h4>
+                <div class="catalog-check-group catalog-filters__item">
+                  <label for="catalog-color-check" class="catalog-check">
+                    <input
+                      id="catalog-color-check"
+                      name="catalog-color-check"
+                      type="checkbox"
+                      data-value="brown"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Коричневый
+                  </label>
+
+                  <label for="catalog-color-check-2" class="catalog-check">
+                    <input
+                      id="catalog-color-check-2"
+                      name="catalog-color-check-2"
+                      type="checkbox"
+                      data-value="black"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Черный
+                  </label>
+
+                  <label for="catalog-color-check-3" class="catalog-check">
+                    <input
+                      id="catalog-color-check-3"
+                      name="catalog-color-check-3"
+                      type="checkbox"
+                      data-value="beige"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Бежевый
+                  </label>
+
+                  <label for="catalog-color-check-4" class="catalog-check">
+                    <input
+                      id="catalog-color-check-4"
+                      name="catalog-color-check-4"
+                      type="checkbox"
+                      data-value="gray"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Серый
+                  </label>
+
+                  <label for="catalog-color-check-5" class="catalog-check">
+                    <input
+                      id="catalog-color-check-5"
+                      name="catalog-color-check-5"
+                      type="checkbox"
+                      data-value="white"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Белый
+                  </label>
+
+                  <label for="catalog-color-check-6" class="catalog-check">
+                    <input
+                      id="catalog-color-check-6"
+                      name="catalog-color-check-6"
+                      type="checkbox"
+                      data-value="blue"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Синий
+                  </label>
+
+                  <label for="catalog-color-check-7" class="catalog-check">
+                    <input
+                      id="catalog-color-check-7"
+                      name="catalog-color-check-7"
+                      type="checkbox"
+                      data-value="orange"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Оранжевый
+                  </label>
+
+                  <label for="catalog-color-check-8" class="catalog-check">
+                    <input
+                      id="catalog-color-check-8"
+                      name="catalog-color-check-8"
+                      type="checkbox"
+                      data-value="yellow"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Желтый
+                  </label>
+
+                  <label for="catalog-color-check-9" class="catalog-check">
+                    <input
+                      id="catalog-color-check-9"
+                      name="catalog-color-check-9"
+                      type="checkbox"
+                      data-value="green"
+                      class="catalog-check__input"
+                    />
+                    <span class="checkbox-reset catalog-check__span"></span>
+                    Зеленый
+                  </label>
+                </div>
+              </div>
+              <div class="catalog-banner">
+                <picture>
+                  <source srcset="images/catalog-banner.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="images/catalog-banner.png"
+                    class="catalog-banner__img"
+                    width="296"
+                    height="190"
+                    alt="Баннер Оксфорд 1950"
+                  />
+                </picture>
+                <span class="catalog-banner__text">
+                  <span class="catalog-banner__title">Оксфорд 1950 </span>
+                  <span class="catalog-banner__subtitle"> Новая коллекция изысканных кресел </span>
+                </span>
+                <a
+                  href="catalog.html"
+                  aria-label="В каталог"
+                  class="btn-reset btn-arrow catalog-banner__btn"
+                >
+                  <span class="btn-arrow__text">В каталог</span>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewbox="0 0 22 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="btn-arrow__icon catalog-banner__banner-btn-icon"
+                  >
+                    <g clip-path="url(#clip0_69659_570)">
+                      <path
+                        d="M9.625 7.5625L13.0625 11L9.625 14.4375"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <circle cx="11" cy="11" r="10" stroke-width="2" />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+              <form class="catalog-sidebar-form">
+                <div id="catalog-sidebar-select" class="catalog-sidebar-select">
+                  <div class="catalog-sidebar-select__box">
+                    <select class="catalog-sidebar-select__select">
+                      <option>Категория</option>
+                    </select>
+                    <div class="catalog-sidebar-select__over"></div>
+                  </div>
+                  <div
+                    id="catalog-sidebar-select-checkboxes"
+                    class="catalog-sidebar-select-checkboxes"
+                  >
+                    <div id="sidebar-checkboxes" class="catalog-sidebar-select-checkboxes__content">
+                      <label for="catalog-sidebar-select-check" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check"
+                          name="catalog-cate-check"
+                          type="checkbox"
+                          data-value="sofas"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Диваны
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-2" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-2"
+                          name="catalog-cate-check-2"
+                          type="checkbox"
+                          data-value="armchairs"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Кресла
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-3" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-3"
+                          name="catalog-cate-check-3"
+                          type="checkbox"
+                          data-value="poufs"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Пуфы
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-4" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-4"
+                          name="catalog-cate-check-4"
+                          type="checkbox"
+                          data-value="beds"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Кровати
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-5" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-5"
+                          name="catalog-cate-check-5"
+                          type="checkbox"
+                          data-value="curbstones"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Тумбы
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-6" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-6"
+                          name="catalog-cate-check-6"
+                          type="checkbox"
+                          data-value="dressers"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Комоды
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-7" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-7"
+                          name="catalog-cate-check-7"
+                          type="checkbox"
+                          data-value="chairs"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Стулья
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-8" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-8"
+                          name="catalog-cate-check-8"
+                          type="checkbox"
+                          data-value="tables"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Столы
+                      </label>
+
+                      <label for="catalog-sidebar-select-check-9" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-select-check-9"
+                          name="catalog-cate-check-9"
+                          type="checkbox"
+                          data-value="accessories"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Аксессуары
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <form class="catalog-sidebar-form">
+                <div id="catalog-sidebar-select-2" class="catalog-sidebar-select">
+                  <div class="catalog-sidebar-select__box">
+                    <select class="catalog-sidebar-select__select">
+                      <option>Цена</option>
+                    </select>
+                    <div class="catalog-sidebar-select__over"></div>
+                  </div>
+                  <div
+                    id="catalog-sidebar-select-checkboxes-2"
+                    class="catalog-sidebar-select-checkboxes"
+                  >
+                    <div class="catalog-sidebar-select-checkboxes__content">
+                      <div class="catalog-filters-price catalog-sidebar-price">
+                        <div id="sidebar-checkboxes-2" class="catalog-filters-price__inputs">
+                          <label for="price-input" class="catalog-filters-price__label">
+                            <span class="catalog-filters-price__span">от</span>
+                            <input
+                              id="sidebar-price-input"
+                              type="text"
+                              name="price-input"
+                              min="500"
+                              max="999999"
+                              placeholder="500"
+                              class="catalog-filters-price__input catalog-filters-price__input-1"
+                            />
+                          </label>
+                          <label for="price-input-2" class="catalog-filters-price__label">
+                            <span class="catalog-filters-price__span">до</span>
+                            <input
+                              id="sidebar-price-input-2"
+                              type="text"
+                              name="price-input-1"
+                              min="500"
+                              max="999999"
+                              placeholder="999 999"
+                              class="catalog-filters-price__input catalog-filters-price__input-2"
+                            />
+                          </label>
+                        </div>
+                        <div id="js-range-slider-2" class="catalog-filters-price__slider"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <form class="catalog-sidebar-form">
+                <div id="catalog-sidebar-select-3" class="catalog-sidebar-select">
+                  <div class="catalog-sidebar-select__box">
+                    <select class="catalog-sidebar-select__select">
+                      <option>Скидка</option>
+                    </select>
+                    <div class="catalog-sidebar-select__over"></div>
+                  </div>
+                  <div
+                    id="catalog-sidebar-select-checkboxes-3"
+                    class="catalog-sidebar-select-checkboxes"
+                  >
+                    <div
+                      id="sidebar-checkboxes-3"
+                      class="catalog-check-group catalog-sidebar-select-checkboxes__content"
+                    >
+                      <label for="catalog-sidebar-discount-check" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-discount-check"
+                          name="catalog-discount-check"
+                          type="checkbox"
+                          data-value="more-than-5000"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Более&nbsp;5&nbsp;000
+                      </label>
+                      <label for="catalog-sidebar-discount-check-2" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-discount-check-2"
+                          name="catalog-discount-check-2"
+                          type="checkbox"
+                          data-value="less-than-5000"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Менее&nbsp;5&nbsp;000
+                      </label>
+                      <label for="catalog-sidebar-discount-check-3" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-discount-check-3"
+                          name="catalog-discount-check-3"
+                          type="checkbox"
+                          data-value="not-important"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Не&nbsp;важно
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <form class="catalog-sidebar-form">
+                <div id="catalog-sidebar-select-4" class="catalog-sidebar-select">
+                  <div class="catalog-sidebar-select__box">
+                    <select class="catalog-sidebar-select__select">
+                      <option>Цвет</option>
+                    </select>
+                    <div class="catalog-sidebar-select__over"></div>
+                  </div>
+                  <div
+                    id="catalog-sidebar-select-checkboxes-4"
+                    class="catalog-sidebar-select-checkboxes"
+                  >
+                    <div
+                      id="sidebar-checkboxes-4"
+                      class="catalog-sidebar-select-checkboxes__content"
+                    >
+                      <label for="catalog-sidebar-color-check" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check"
+                          name="catalog-sidebar-color-check"
+                          type="checkbox"
+                          data-value="brown"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Коричневый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-2" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-2"
+                          name="catalog-sidebar-color-check-2"
+                          type="checkbox"
+                          data-value="black"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Черный
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-3" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-3"
+                          name="catalog-sidebar-color-check-3"
+                          type="checkbox"
+                          data-value="beige"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Бежевый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-4" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-4"
+                          name="catalog-sidebar-color-check-4"
+                          type="checkbox"
+                          data-value="gray"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Серый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-5" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-5"
+                          name="catalog-sidebar-color-check-5"
+                          type="checkbox"
+                          data-value="white"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Белый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-6" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-6"
+                          name="catalog-sidebar-color-check-6"
+                          type="checkbox"
+                          data-value="blue"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Синий
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-7" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-7"
+                          name="catalog-sidebar-color-check-7"
+                          type="checkbox"
+                          data-value="orange"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Оранжевый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-8" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-8"
+                          name="catalog-sidebar-color-check-8"
+                          type="checkbox"
+                          data-value="yellow"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Желтый
+                      </label>
+
+                      <label for="catalog-sidebar-color-check-9" class="catalog-check">
+                        <input
+                          id="catalog-sidebar-color-check-9"
+                          name="catalog-sidebar-color-check-9"
+                          type="checkbox"
+                          data-value="green"
+                          class="catalog-check__input"
+                        />
+                        <span class="checkbox-reset catalog-check__span"></span>
+                        Зеленый
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <h2 class="catalog-main__title">Каталог</h2>
+            <div class="catalog-products">
+              <div id="catalog-products-slider" class="swiper catalog-products__slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">5,0</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_1.webp" type="image/webp" />
+                          <img
+                            id="product-card"
+                            loading="lazy"
+                            src="images/product_1.png"
+                            class="image product-card__img"
+                            alt="Диван кожаный “R-94”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван кожаный </span>
+                        <span class="product-card__model">“R-94”</span>
+                      </div>
+                      <span class="product-card__price">94&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,9</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_2.webp" type="image/webp" />
+                          <img
+                            id="product-card-2"
+                            loading="lazy"
+                            src="images/product_2.png"
+                            class="image product-card__img"
+                            alt="Диван апартековый “T-75”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван апартековый </span>
+                        <span class="product-card__model">“T-75”</span>
+                      </div>
+                      <span class="product-card__price">69&nbsp;990 руб</span>
+                      <button aria-label="Купить" class="btn-reset btn product-card__btn">
+                        Купить
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,8</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_3.webp" type="image/webp" />
+                          <img
+                            id="product-card-3"
+                            loading="lazy"
+                            src="images/product_3.png"
+                            class="image product-card__img"
+                            alt="Диван тканевый “D-31”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван тканевый </span>
+                        <span class="product-card__model">“D-31”</span>
+                      </div>
+                      <span class="product-card__price">28&nbsp;490 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,8</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_4.webp" type="image/webp" />
+                          <img
+                            id="product-card-4"
+                            loading="lazy"
+                            src="images/product_4.png"
+                            class="image product-card__img"
+                            alt="Диван велюровый “Y-68”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван велюровый </span>
+                        <span class="product-card__model">“Y-68”</span>
+                      </div>
+                      <span class="product-card__price">22&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,8</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_5.webp" type="image/webp" />
+                          <img
+                            id="product-card-5"
+                            loading="lazy"
+                            src="images/product_5.png"
+                            class="image product-card__img"
+                            alt="Диван из шинила “W-95”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван из шинила </span>
+                        <span class="product-card__model">“W-95”</span>
+                      </div>
+                      <span class="product-card__price">22&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,8</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_6.webp" type="image/webp" />
+                          <img
+                            id="product-card-6"
+                            loading="lazy"
+                            src="images/product_6.png"
+                            class="image product-card__img"
+                            alt="Диван флоковый “G-41”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван флоковый </span>
+                        <span class="product-card__model">“G-41”</span>
+                      </div>
+                      <span class="product-card__price">17&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,8</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_7.webp" type="image/webp" />
+                          <img
+                            id="product-card-7"
+                            loading="lazy"
+                            src="images/product_7.png"
+                            class="image product-card__img"
+                            alt="Диван шиниловый “V-43”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван шиниловый </span>
+                        <span class="product-card__model">“V-43”</span>
+                      </div>
+                      <span class="product-card__price">19&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,7</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_8.webp" type="image/webp" />
+                          <img
+                            id="product-card-8"
+                            loading="lazy"
+                            src="images/product_8.png"
+                            class="image product-card__img"
+                            alt="Диван велюровый “S-99”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван велюровый </span>
+                        <span class="product-card__model">“S-99”</span>
+                      </div>
+                      <span class="product-card__price">19&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,7</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_18.webp" type="image/webp" />
+                          <img
+                            id="product-card-9"
+                            loading="lazy"
+                            src="images/product_18.png"
+                            class="image product-card__img"
+                            alt="Диван из&nbsp;кожзама “F-85”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван из&nbsp;кожзама</span>
+                        <span class="product-card__model">“F-85”</span>
+                      </div>
+                      <span class="product-card__price">26&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,6</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_9.webp" type="image/webp" />
+                          <img
+                            id="product-card-10"
+                            loading="lazy"
+                            src="images/product_9.png"
+                            class="image product-card__img"
+                            alt="Диван флоковый “H-64”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван флоковый</span>
+                        <span class="product-card__model">“H-64”</span>
+                      </div>
+                      <span class="product-card__price">25&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,6</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_10.webp" type="image/webp" />
+                          <img
+                            id="product-card-11"
+                            loading="lazy"
+                            src="images/product_10.png"
+                            class="image product-card__img"
+                            alt="Диван флоковый “H-58”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван флоковый</span>
+                        <span class="product-card__model">“H-58”</span>
+                      </div>
+                      <span class="product-card__price">19&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,6</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_11.webp" type="image/webp" />
+                          <img
+                            id="product-card-12"
+                            loading="lazy"
+                            src="images/product_11.png"
+                            class="image product-card__img"
+                            alt="Диван из кожзама “R-43”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван из кожзама </span>
+                        <span class="product-card__model">“R-43”</span>
+                      </div>
+                      <span class="product-card__price">33&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,6</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_12.webp" type="image/webp" />
+                          <img
+                            id="product-card-13"
+                            loading="lazy"
+                            src="images/product_12.png"
+                            class="image product-card__img"
+                            alt="Диван из шинила “С-42”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван из шинила</span>
+                        <span class="product-card__model">“С-42”</span>
+                      </div>
+                      <span class="product-card__price">18&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,6</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_13.webp" type="image/webp" />
+                          <img
+                            id="product-card-14"
+                            loading="lazy"
+                            src="images/product_13.png"
+                            class="image product-card__img"
+                            alt="Диван велюровый “U-58”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван велюровый</span>
+                        <span class="product-card__model">“U-58”</span>
+                      </div>
+                      <span class="product-card__price">21&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,5</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_14.webp" type="image/webp" />
+                          <img
+                            id="product-card-15"
+                            loading="lazy"
+                            src="images/product_14.png"
+                            class="image product-card__img"
+                            alt="Диван флоковый “F-41”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван флоковый</span>
+                        <span class="product-card__model">“F-41”</span>
+                      </div>
+                      <span class="product-card__price">17&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,5</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_15.webp" type="image/webp" />
+                          <img
+                            id="product-card-16"
+                            loading="lazy"
+                            src="images/product_15.png"
+                            class="image product-card__img"
+                            alt="Диван велюровый “R-85”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван велюровый </span>
+                        <span class="product-card__model">“R-85”</span>
+                      </div>
+                      <span class="product-card__price">34&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,5</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_16.webp" type="image/webp" />
+                          <img
+                            id="product-card-17"
+                            loading="lazy"
+                            src="images/product_16.png"
+                            class="image product-card__img"
+                            alt="Диван велюровый “S-44”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван велюpовый </span>
+                        <span class="product-card__model">“S-44”</span>
+                      </div>
+                      <span class="product-card__price">19&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide catalog-products__slide">
+                    <div class="product-card">
+                      <div class="rating">
+                        <svg width="15px" height="15px" class="rating__icon">
+                          <use xlink:href="images/sprite.svg#star"></use>
+                        </svg>
+                        <p class="rating__point">4,5</p>
+                      </div>
+                      <div class="product-card__img-block">
+                        <picture>
+                          <source srcset="images/product_17.webp" type="image/webp" />
+                          <img
+                            id="product-card-18"
+                            loading="lazy"
+                            src="images/product_17.png"
+                            class="image product-card__img"
+                            alt="Диван из шинила “С-80”"
+                          />
+                        </picture>
+                      </div>
+                      <div class="product-card__text-block">
+                        <span class="product-card__title">Диван из шинила</span>
+                        <span class="product-card__model">“С-80”</span>
+                      </div>
+                      <span class="product-card__price">20&nbsp;990 руб</span>
+                      <a
+                        href="product-page.html"
+                        aria-label="Купить"
+                        class="btn-reset btn product-card__btn"
+                        >Купить</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- pagination button -->
+                <div class="catalog-products__slider-navi">
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay is-hidden"></div>
+      </main>
+      @include('pages/footer.html')
+    </div>
+  </body>
+</html>

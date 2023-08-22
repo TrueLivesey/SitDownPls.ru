@@ -11,6 +11,8 @@ import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import cleanCSS from 'gulp-clean-css';
 
+// JS
+
 // IMAGE + SVG
 import imagemin, { mozjpeg, optipng } from 'gulp-imagemin';
 import svgSprite from 'gulp-svg-sprite';
@@ -184,7 +186,7 @@ function images() {
         isProd,
         imagemin([
           mozjpeg({
-            quality: 85,
+            quality: 80,
             progressive: true,
           }),
           optipng({

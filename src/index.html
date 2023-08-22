@@ -4,23 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sdp.ru</title>
+    <meta name="description" content="Магазин мебели с обширным каталогом в России" />
+    <title>Главная</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"
+    ></script>
     <script defer src="js/main.js"></script>
   </head>
   <body>
-    @include('pages/header.html')
+    <div class="wrapper main-page">
+      @include('pages/header.html')
 
-    <main>
-      @include('pages/hero.html') @include('pages/special.html') @include('pages/rating.html')
-      @include('pages/banner.html') @include('pages/top-categories.html')
-      @include('pages/useful.html') @include('pages/callback.html')
-    </main>
+      <main>
+        @include('pages/hero.html') @include('pages/special.html') @include('pages/rating.html')
+        @include('pages/banner.html') @include('pages/top-categories.html')
+        @include('pages/useful.html') @include('pages/callback.html')
+      </main>
 
-    @include('pages/footer.html')
+      @include('pages/footer.html')
+    </div>
   </body>
 </html>

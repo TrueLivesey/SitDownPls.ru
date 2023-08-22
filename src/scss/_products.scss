@@ -3,14 +3,13 @@
   grid-template-columns: repeat(auto-fill, minmax(8.75rem, 18.5rem));
   gap: $gridGap;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.9375rem;
 
   .product-card {
     position: relative;
     display: flex;
     flex-direction: column;
     max-width: 18.5rem;
-    // padding: 1.84rem;
     border-radius: 0.63rem;
     background-color: $colorGreyLight;
 
@@ -22,63 +21,39 @@
       @include is-visible(flex);
     }
 
-    &__rating {
-      position: relative;
-      padding: $paddingProduct;
-    }
-
-    &__icon {
-      position: absolute;
-      top: 32px;
-      left: 26px;
-      fill: $colorSecondary;
-    }
-
-    &__point {
-      padding-left: 1.5rem;
-      color: $colorSecondary;
-    }
-
     &__img-block {
       display: flex;
       justify-content: center;
       align-items: flex-end;
       width: 100%;
       height: 8.45rem;
-      margin-bottom: 1rem;
-      
+      margin-top: 3.5rem;
+      margin-bottom: 1.0625rem;
     }
 
     &__text-block {
       padding: $paddingProduct;
       padding-top: 0; 
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.375rem;
     }
 
     &__title,
     &__model {
       display: block;
-      font-family: $mainFamily;
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 130%;
+      @include text($mainFamily, $descrSize, normal, 400, 130%);
     }
 
     &__price {
       padding: $paddingProduct;
       padding-top: 0;
-      margin-bottom: 1.5rem;
-      font-family: $mainFamily;
-      font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 130%;
+      margin-bottom: 1.4375rem;
+      @include text($mainFamily, $defaultSize, normal, 400, 130%);
       color: $colorGreyShade;
     }
 
     &__btn {
       align-self: flex-start;
+      padding: 1.0625rem 2.0625rem;
       margin: $paddingProduct;
       margin-top: 0;
       margin-bottom: 1.88rem;
@@ -86,3 +61,118 @@
   }
 }
 
+.product-card {
+  &__price {
+    display: block;
+  }
+
+  &__btn {
+    display: inline-block;
+  }
+}
+
+// MEDIA
+@include media('max', 'xl') {
+  .products {
+    .product-card {
+      &:nth-child(n + 7) {
+        display: none;
+      }
+
+      &.is-visible {
+        display: flex;
+      }
+    }
+  }
+}
+
+@include media('max', 'lg') {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+
+    .product-card {
+      &__img {
+        padding: 0 12px;
+      }
+    }
+  }
+}
+
+@include media('max', 'md') {
+  .products {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    
+    .product-card {
+      grid-column: 3 span;
+
+      &:nth-child(4) {
+        .product-card__img-block {
+          margin-top: 2.625rem;
+          margin-bottom: 0.625rem;
+        }
+      }
+
+      &:nth-child(5) {
+        .product-card__img-block {
+          margin-top: 2.5rem;
+          margin-bottom: 0.8125rem;
+        }
+      }
+
+      &:nth-child(6) {
+        .product-card__img-block {
+          margin-top: 2.5rem;
+          margin-bottom: 0.8125rem;
+        }
+      }
+
+      &__title,
+      &__model {
+        font-size: $defaultSize;
+      }
+
+      &__img-block {
+        height: 3.4rem;
+        margin-top: 2.0625rem;
+        margin-bottom: 1.25rem;
+
+        &:nth-child(2) {
+          margin-top: 34px;
+        }
+      }
+
+      &__img {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      &__text-block,
+      &__price {
+        padding: 0 1rem;
+      }
+
+      &__text-block {
+        margin-bottom: 1rem;
+      }
+
+      &__price {
+        margin-bottom: 0.9375rem;
+      }
+
+      &__btn-block {
+        padding: 1rem;
+        padding-top: 0;
+        margin-top: auto;
+      }
+
+      &__btn.product-card__btn {
+        padding: 10px 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+}

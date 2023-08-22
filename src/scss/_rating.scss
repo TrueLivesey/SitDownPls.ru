@@ -1,12 +1,41 @@
 .rating {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 1.875rem;
+  left: 1.875rem;
 
-  .btn-more {
-    text-align: center;
+  &__icon {
+    position: absolute;
+    fill: $colorSecondary;
+  }
+  
+  &__point {
+    padding-left: 1.4375rem;
+    color: $colorSecondary;
+  }
+}
+
+// product-page
+.product-page {
+  .rating {
+    margin-bottom: 0.13rem;
+
+    &__point {
+      padding-left: 1.3rem;
+    }
+  }
+}
+
+// MEDIA
+@include media('max', 'md') {
+  .rating {
+    top: 1rem;
+    left: 15px;
+
+    &__point {
+      padding-left: 20px;
+      font-size: 0.75rem;
+    }
   }
 }

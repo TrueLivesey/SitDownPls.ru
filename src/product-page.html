@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"
+    ></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper product-page-wrapper">
+      @include('pages/header.html')
+
+      <main class="product-page">
+        <div class="container">
+          <div class="router">
+            <div class="router__item">
+              <a href="#" aria-label="Главная" class="router__link">Главная </a>
+            </div>
+            <div class="router__item">
+              <span class="router__slash">/</span>
+              <a href="catalog.html" aria-label="Перейти в каталог" class="router__link">Каталог</a>
+            </div>
+            <div class="router__item">
+              <span class="router__slash">/</span>
+              <span class="router__text">Диваны</span>
+            </div>
+            <div class="router__item">
+              <span class="router__slash">/</span>
+              <span class="router__text">Прямые диваны</span>
+            </div>
+            <div class="router__item">
+              <span class="router__slash">/</span>
+              <span class="router__text router__text--primary">D-31</span>
+            </div>
+          </div>
+          <div class="product-page-info">
+            <div class="product-page-info__top grid">
+              <button
+                id="js-modal-img-btn"
+                aria-label="Открыть модальное окно с изображениями дивана"
+                class="product-page-info__btn-modal"
+              >
+                <picture>
+                  <source srcset="images/product-page-info_1.webp" type="image/webp" />
+                  <img
+                    loading="lazy"
+                    src="images/product-page-info_1.png"
+                    class="product-page-info__img"
+                    width="624"
+                    height="245"
+                    alt="Прямой диван D-31"
+                  />
+                </picture>
+              </button>
+              <div class="product-page-info__imgs-list">
+                <div id="product-page-modal-slider" class="swiper product-page-modal-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture>
+                        <source srcset="images/product-page-info_2.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_2.png"
+                          class="product-page-info__img-small"
+                          width="123"
+                          height="61"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture>
+                        <source srcset="images/product-page-info_3.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_3.png"
+                          class="product-page-info__img-small"
+                          width="66"
+                          height="61"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture>
+                        <source srcset="images/product-page-info_4.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_4.png"
+                          class="product-page-info__img-small"
+                          width="134"
+                          height="61"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture>
+                        <source srcset="images/product-page-info_5.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_5.png"
+                          class="product-page-info__img-small"
+                          width="137"
+                          height="61"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-page-info__text-block">
+                <div class="rating">
+                  <svg width="15px" height="15px" class="rating__icon">
+                    <use xlink:href="images/sprite.svg#star"></use>
+                  </svg>
+                  <p class="rating__point">4,8</p>
+                </div>
+                <div class="product-page-info__title-block">
+                  <h3 class="product-page-info__title">Диван тканевый прямой "D-31"</h3>
+                  <p class="product-page-info__subtitle">
+                    Мини 120&nbsp;см без ящика Stark синий (Рогожка)
+                  </p>
+                </div>
+                <span class="product-page-info__price"> 28&nbsp;490 руб </span>
+                <div class="product-page-info__btns-block">
+                  <button
+                    id="js-modal-btn"
+                    aria-label="Купить в один клик"
+                    class="btn-reset btn-revert product-page-info__btn"
+                  >
+                    Купить в&nbsp;один клик
+                  </button>
+                  <button
+                    aria-label="Добавить товар в корзину"
+                    class="product-page-info__btn-basket"
+                  >
+                    + Добавить в&nbsp;корзину
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-page-info__bottom grid">
+              <div class="product-page-info__descr-block">
+                <span class="product-page-info__descr-title">Опорный механизм</span>
+                <p class="product-page-info__descr">
+                  Опорный механизм напоминает пантограф, к&nbsp;которому добавили дополнительную
+                  секцию. У&nbsp;опорного дивана сиденье &laquo;выпрыгивает&raquo; вперёд
+                  и&nbsp;вытаскивает вторую часть спального места. Заключительный штрих&nbsp;&mdash;
+                  опустить спинку.
+                </p>
+                <p class="product-page-info__descr">
+                  Этот механизм не&nbsp;портит пол и&nbsp;не&nbsp;боится ковров. Требуется чуть
+                  больше силы, чтобы разложить диван, но&nbsp;подросток справится.
+                </p>
+                <div class="product-page-info__plan-block">
+                  <picture>
+                    <source srcset="images/d31-plan_1.webp" type="image/webp" />
+                    <img
+                      loading="lazy"
+                      src="images/d31-plan_1.png"
+                      class="product-page-info__plan-img"
+                      width="247"
+                      height="113"
+                      alt="Прямой диван D-31"
+                    />
+                  </picture>
+
+                  <picture>
+                    <source srcset="images/d31-plan_2.webp" type="image/webp" />
+                    <img
+                      loading="lazy"
+                      src="images/d31-plan_2.png"
+                      class="product-page-info__plan-img"
+                      width="247"
+                      height="113"
+                      alt="Прямой диван D-31"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="characteristics">
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Гарантия</span>
+                  </dt>
+                  <dd class="characteristics__value">18&nbsp;месяцев</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Артикул</span>
+                  </dt>
+                  <dd class="characteristics__value">AAA41269004</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Длина</span>
+                  </dt>
+                  <dd class="characteristics__value">163&nbsp;см</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Высота</span>
+                  </dt>
+                  <dd class="characteristics__value">90&nbsp;см</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Глубина</span>
+                  </dt>
+                  <dd class="characteristics__value">108&nbsp;см</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Спальное место</span>
+                  </dt>
+                  <dd class="characteristics__value">200&nbsp;см х&nbsp;125&nbsp;см</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Высота посадки</span>
+                  </dt>
+                  <dd class="characteristics__value">45&nbsp;см</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Механизм</span>
+                  </dt>
+                  <dd class="characteristics__value">Опорный</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Тип обивки</span>
+                  </dt>
+                  <dd class="characteristics__value">Рогожка</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Цвет</span>
+                  </dt>
+                  <dd class="characteristics__value">Синий</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Наполнитель</span>
+                  </dt>
+                  <dd class="characteristics__value">Независимый пружинный блок</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Материал каркаса</span>
+                  </dt>
+                  <dd class="characteristics__value">Металл. рама с&nbsp;дерев. латами</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Количество мест</span>
+                  </dt>
+                  <dd class="characteristics__value">Двухместные</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Категория</span>
+                  </dt>
+                  <dd class="characteristics__value">Прямые тканевые диваны</dd>
+                </dl>
+
+                <dl class="characteristics__item">
+                  <dt class="characteristics__text">
+                    <span class="characteristics__title">Возврат</span>
+                  </dt>
+                  <dd class="characteristics__value">Условия</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-similar">
+            <h3 class="title-h3 products-similar__title">Похожие товары</h3>
+            <div class="products-similar-slider-btns">
+              <div class="products-similar-prev">
+                <svg
+                  width="32"
+                  height="32"
+                  viewbox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="products-similar-prev__icon products-similar__slider-icon"
+                >
+                  <g clip-path="url(#clip0_663_1756)">
+                    <path
+                      d="M14 11L19 16L14 21"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle id="Ellipse 8" cx="16" cy="16" r="15" stroke-width="2" />
+                  </g>
+                </svg>
+              </div>
+              <div class="products-similar-next">
+                <svg
+                  width="32"
+                  height="32"
+                  viewbox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="products-similar-next__icon products-similar__slider-icon"
+                >
+                  <g clip-path="url(#clip0_663_1756)">
+                    <path
+                      d="M14 11L19 16L14 21"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="16" cy="16" r="15" stroke-width="2" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div id="products-similar-slider" class="swiper products-similar__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,5</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_15.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_15.png"
+                          class="image product-card__img"
+                          alt="Диван велюровый “R-85”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван велюровый </span>
+                      <span class="product-card__model">“R-85”</span>
+                    </div>
+                    <span class="product-card__price">34&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,6</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_10.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_10.png"
+                          class="image product-card__img"
+                          alt="Диван флоковый “H-58”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван флоковый</span>
+                      <span class="product-card__model">“H-58”</span>
+                    </div>
+                    <span class="product-card__price">23&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,5</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_16.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_16.png"
+                          class="image product-card__img"
+                          alt="Диван велюровый “S-44”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван велюровый </span>
+                      <span class="product-card__model">“S-44”</span>
+                    </div>
+                    <span class="product-card__price">19&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,8</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_7.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_7.png"
+                          class="image product-card__img"
+                          alt="Диван шиниловый “V-43”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван шиниловый </span>
+                      <span class="product-card__model">“V-43”</span>
+                    </div>
+                    <span class="product-card__price">19&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,6</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_12.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_12.png"
+                          class="image product-card__img"
+                          alt="Диван из шинила “С-42”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван из шинила</span>
+                      <span class="product-card__model">“С-42”</span>
+                    </div>
+                    <span class="product-card__price">18&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+
+                <div class="swiper-slide products-similar__slide">
+                  <div class="product-card">
+                    <div class="rating">
+                      <svg width="15px" height="15px" class="rating__icon">
+                        <use xlink:href="images/sprite.svg#star"></use>
+                      </svg>
+                      <p class="rating__point">4,5</p>
+                    </div>
+                    <div class="product-card__img-block">
+                      <picture>
+                        <source srcset="images/product_14.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product_14.png"
+                          class="image product-card__img"
+                          alt="Диван флоковый “F-41”"
+                        />
+                      </picture>
+                    </div>
+                    <div class="product-card__text-block">
+                      <span class="product-card__title">Диван флоковый</span>
+                      <span class="product-card__model">“F-41”</span>
+                    </div>
+                    <span class="product-card__price">17&nbsp;990 руб</span>
+                    <a
+                      href="product-page.html"
+                      aria-label="Купить"
+                      class="btn-reset btn product-card__btn"
+                      >Купить</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="js-modal-wrapper" class="modal-wrapper is-hidden">
+          <div id="js-modal" class="modal">
+            <div class="modal__content">
+              <h3 class="modal__title">Купить в&nbsp;один клик</h3>
+              <p class="modal__subtitle">
+                Чтобы оформить заказ&nbsp;&mdash; заполните формы ниже и&nbsp;наш менеджер свяжется
+                с&nbsp;вами в&nbsp;течении часа.
+              </p>
+              <form id="callback-form" action="POST" class="callback-form modal-form">
+                <label for="callback-name" class="callback-form__label modal-form__label">
+                  <input
+                    id="callback-name"
+                    name="callback-name"
+                    type="text"
+                    placeholder="Как вас зовут?"
+                    class="callback-form__input"
+                  />
+                </label>
+                <label for="callback-phone" class="callback-form__label modal-form__label">
+                  <input
+                    id="callback-phone"
+                    name="callback-phone"
+                    type="tel"
+                    placeholder="Ваш телефон"
+                    class="callback-form__input"
+                  />
+                </label>
+                <button
+                  id="js-modal-feedback-btn"
+                  aria-label="Отправить"
+                  class="btn-reset btn-revert callback-form__btn"
+                >
+                  Отправить
+                </button>
+                <label
+                  for="callback-check"
+                  class="callback-form__label-check modal-form__label-check"
+                >
+                  <input
+                    id="callback-check"
+                    name="callback-check"
+                    type="checkbox"
+                    class="callback-form__input-check"
+                  />
+                  <span class="callback-form__check-span modal-form__check-span"></span>
+                  Принимаю&nbsp;
+                  <a href="#" target="_blank" class="callback-form__link modal-form__link">
+                    пользовательское соглашение</a
+                  >
+                </label>
+              </form>
+              <button
+                id="js-modal-close-btn"
+                aria-label="Закрыть модальное окно"
+                class="modal__btn-close btn-close-state"
+              >
+                <div class="btn-close-wrapper">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewbox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="modal__icon"
+                  >
+                    <g>
+                      <g>
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z"
+                          fill="#999999"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z"
+                          fill="#999999"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="js-modal-img" class="modal-wrapper is-hidden">
+          <div class="modal-img">
+            <div class="modal-img__content">
+              <button
+                id="js-modal-img-close-btn"
+                aria-label="Закрыть модальное окно"
+                class="modal-img__btn-close btn-close-state"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewbox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="modal-img__icon"
+                >
+                  <g>
+                    <g>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.3812 0.397739L11.2581 9.03977C11.8029 9.57009 11.8029 10.4299 11.2581 10.9602L2.3812 19.6023C1.83647 20.1326 0.953281 20.1326 0.408549 19.6023C-0.136183 19.0719 -0.136183 18.2121 0.408549 17.6818L8.29914 10L0.40855 2.31819C-0.136182 1.78787 -0.136181 0.928057 0.408551 0.397739C0.953283 -0.13258 1.83647 -0.13258 2.3812 0.397739Z"
+                        fill="#999999"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.6188 0.397739L8.74188 9.03977C8.19715 9.57009 8.19715 10.4299 8.74188 10.9602L17.6188 19.6023C18.1635 20.1326 19.0467 20.1326 19.5914 19.6023C20.1362 19.0719 20.1362 18.2121 19.5914 17.6818L11.7009 10L19.5914 2.31819C20.1362 1.78787 20.1362 0.928057 19.5914 0.397739C19.0467 -0.13258 18.1635 -0.13258 17.6188 0.397739Z"
+                        fill="#999999"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <picture class="modal-img__picture-big">
+                <source srcset="images/product-page-info_1.webp" type="image/webp" />
+                <img
+                  loading="lazy"
+                  src="images/product-page-info_1.png"
+                  class="modal-img__img"
+                  width="1065"
+                  height="418"
+                  alt="Прямой диван D-31"
+                />
+              </picture>
+              <div class="modal-img__imgs-list">
+                <div class="product-page-modal-slide__prev">
+                  <svg width="32px" height="32px" class="product-page-modal-slide__prev-icon">
+                    <use xlink:href="images/sprite.svg#slider-button"></use>
+                  </svg>
+                </div>
+                <div id="product-page-modal-slider-2" class="swiper product-page-modal-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture class="modal-img__picture-small">
+                        <source srcset="images/product-page-info_2.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_2.png"
+                          class="product-page-info__img-small"
+                          width="auto"
+                          height="126"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture class="modal-img__picture-small">
+                        <source srcset="images/product-page-info_3.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_3.png"
+                          class="product-page-info__img-small"
+                          width="auto"
+                          height="126"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture class="modal-img__picture-small">
+                        <source srcset="images/product-page-info_4.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_4.png"
+                          class="product-page-info__img-small"
+                          width="auto"
+                          height="126"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+
+                    <div class="swiper-slide product-page-modal-slider__slide">
+                      <picture class="modal-img__picture-small">
+                        <source srcset="images/product-page-info_5.webp" type="image/webp" />
+                        <img
+                          loading="lazy"
+                          src="images/product-page-info_5.png"
+                          class="product-page-info__img-small"
+                          width="auto"
+                          height="126"
+                          alt="Прямой диван D-31"
+                        />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-page-modal-slide__next btn-slider">
+                  <svg width="32px" height="32px" class="product-page-modal-slide__next-icon">
+                    <use xlink:href="images/sprite.svg#slider-button"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay is-hidden"></div>
+      </main>
+
+      @include('pages/footer.html')
+    </div>
+  </body>
+</html>
