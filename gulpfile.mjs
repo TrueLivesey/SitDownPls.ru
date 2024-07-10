@@ -34,6 +34,7 @@ import gulpif from 'gulp-if';
 import rev from 'gulp-rev';
 import revdel from 'gulp-rev-delete-original';
 import { deleteAsync } from 'del';
+import ghPages from 'gulp-gh-pages';
 
 // ПУТИ
 const srcFolder = './src';
@@ -239,6 +240,10 @@ function sprite() {
     )
     .pipe(dest(appPaths.buildImagesFolder));
 }
+
+gulp.task('deploy', function () {
+  return gulp.src('./app/**/*').pipe(ghPages());
+});
 
 // кэш
 const cacheFiles = () => {
