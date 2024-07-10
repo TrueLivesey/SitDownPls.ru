@@ -1,0 +1,10 @@
+/*!
+ * dist/inputmask
+ * https://github.com/RobinHerbots/Inputmask
+ * Copyright (c) 2010 - 2023 Robin Herbots
+ * Licensed under the MIT license
+ * Version: 5.0.8
+ */
+
+/*! modernizr 3.6.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-webp-setclasses !*/
